@@ -1,8 +1,8 @@
-import { OrthographyResponse } from "../../interfaces";
+import { ProsConsResponse } from "../../interfaces";
 
-export const orthographyUseCase = async (prompt: string) => {
+export const prosConsUseCase = async (prompt: string) => {
 
-    const endpoint = 'orthography-check';
+    const endpoint = 'pros-cons-discusser'
 
     try{
         const resp = await fetch(`${ import.meta.env.VITE_GPT_API }/${ endpoint }`, {
@@ -12,9 +12,9 @@ export const orthographyUseCase = async (prompt: string) => {
             },
             body: JSON.stringify({ prompt })
         });
-        if ( !resp.ok ) throw new Error('No se pudo realizar la correción');
+        if ( !resp.ok ) throw new Error('No se pudo realizar la comparacion');
 
-        const data=await resp.json() as OrthographyResponse;
+        const data = await resp.json() as ProsConsResponse;
 
         return{
             ok: true,
@@ -24,9 +24,7 @@ export const orthographyUseCase = async (prompt: string) => {
     }catch(e){
         return { 
             ok: false,
-            userScore: 0,
-            errors: [],
-            message: 'No se puede realizar la correccion'
+            content: 'No se pudo realizar la comparacion'
          }
     }
 
