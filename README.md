@@ -1,4 +1,4 @@
->[!TIP]
+>[!IMPORTANT]
 > This repository was made in combination with the [nestGPT](https://github.com/Rodieche/nestGPT) repository. So it is necessary to download nestGPT first, run it, and then download this repository and follow the instructions to make it work correctly.
 
 # Installation in Dev
