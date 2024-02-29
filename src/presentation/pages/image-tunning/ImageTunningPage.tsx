@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { GptMessage, MyMessage, TypingLoader, TextMessageBox, GptMessagImage, GptMessageSelectableImage } from "../../components";
+import { GptMessage, MyMessage, TypingLoader, TextMessageBox, GptMessageSelectableImage } from "../../components";
 import { imageGenerationtUseCase, imageVariationtUseCase } from "../../../core/use-cases";
 
 interface Message {
