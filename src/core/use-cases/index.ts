@@ -1,4 +1,6 @@
 export * from './audioToText.use-case';
+export * from './image-generation.use-case';
+export * from './image-variation.use-case';
 export * from './orthograpgy.use-case';
 export * from './prosConsDiscusser.use-case';
 export * from './prosConsStreamDiscusser.use-case';
