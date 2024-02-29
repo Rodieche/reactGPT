@@ -1,10 +1,10 @@
-import { ImageInterface } from "../../interfaces";
+import { ImageInterface } from "../../../interfaces";
 
 type GeneratedImage = ImageInterface | null;
 
-export const imageVariationtUseCase = async ( originalImage: string ): Promise<GeneratedImage> => {
+export const imageGenerationtUseCase = async ( prompt: string, originalImage?: string, maskImage?: string ): Promise<GeneratedImage> => {
 
-    const endpoint = 'image-variation';
+    const endpoint = 'image-generation';
 
     try{
         const response = await fetch(`${ import.meta.env.VITE_GPT_API }/${ endpoint }`, {
@@ -13,7 +13,9 @@ export const imageVariationtUseCase = async ( originalImage: string ): Promise<G
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                baseImage: originalImage
+                prompt,
+                originalImage,
+                maskImage
             })
         });
 
